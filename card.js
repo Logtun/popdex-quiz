@@ -70,7 +70,7 @@ function pqRankPanel(x, r, F, P) {
   x.fillStyle = P.sub; x.font = `700 30px ${F}`; x.fillText(`of ${r.players} player${r.players === 1 ? "" : "s"}`, cx, b + 260);
   x.textAlign = "left";
 }
-function pqFooter(x, F, color) { x.fillStyle = color; x.font = `600 24px ${F}`; x.textAlign = "right"; x.fillText("The trader-first perp DEX", 1130, 600); x.textAlign = "left"; }
+function pqFooter(x, F, color) { x.fillStyle = color; x.font = `600 24px ${F}`; x.textAlign = "right"; x.fillText("The trader-first perp DEX", 1130, 600); x.textAlign = "left"; x.font = `700 24px ${F}`; x.fillText("popdex-quiz.site", 70, 600); }
 
 // A · Midnight: the original dark card with the purple glow
 function pqDesignA(x, r, F) {

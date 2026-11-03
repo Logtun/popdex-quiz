@@ -445,7 +445,7 @@ async function cardPage(env, id, origin) {
   const r = await cardRow(env, id);
   const html = (s, status, cache) => new Response(s, { status, headers: { "content-type": "text/html; charset=utf-8", "cache-control": cache } });
   if (!r) {
-    const meta = { title: "PopDEX Quiz", descr: "Think you know PopDEX? Play the community-made PopDEX Quiz: live games and solo practice.", url: PUBQ + "/", image: PUBQ + "/og.png?v=2", mime: "image/png", h: 630, alt: "PopDEX Quiz" };
+    const meta = { title: "PopDEX Quiz", descr: "Think you know PopDEX? Play the community-made PopDEX Quiz: live games and solo practice.", url: PUBQ + "/", image: PUBQ + "/og.png?v=3", mime: "image/png", h: 630, alt: "PopDEX Quiz" };
     return html(pageShell(origin, meta, `<h1>This score card has expired or doesn't exist</h1><p class="sub">Score cards are kept for 180 days. You can still play.</p><div class="cta"><a class="btn primary" href="/">Play the PopDEX Quiz</a><a class="btn" href="/solo.html">Play solo</a></div>`), 404, "public, max-age=60");
   }
   const image = `${PUBQ}/r/${r.id}.${r.mime === "image/png" ? "png" : "jpg"}`;
