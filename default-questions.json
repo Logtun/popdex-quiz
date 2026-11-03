@@ -1,0 +1,277 @@
+{
+ "title": "PopDEX Basics",
+ "questions": [
+  {
+   "q": "PopDEX is a perpetual futures (perp) DEX.",
+   "type": "tf",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "time": 20,
+   "source": "https://popdex.xyz/",
+   "note": "PopDEX is a trader-first Perp DEX focused on capital efficiency and trading experience"
+  },
+  {
+   "q": "Which blockchain is PopDEX built on?",
+   "type": "mc",
+   "options": [
+    "Base",
+    "Arbitrum One",
+    "Morph Tachyon",
+    "Solana"
+   ],
+   "answer": 2,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/chain/overview",
+   "note": "PopDEX is a decentralized perpetual exchange built on Morph Tachyon"
+  },
+  {
+   "q": "How much of the value PopDEX creates goes back to real contributors?",
+   "type": "mc",
+   "options": [
+    "50%",
+    "80%",
+    "20%",
+    "100%"
+   ],
+   "answer": 3,
+   "time": 20,
+   "source": "https://popdex.xyz/",
+   "note": "returning 100% of the value it creates to real contributors"
+  },
+  {
+   "q": "PopDEX lets you trade from one unified margin account across markets.",
+   "type": "tf",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "time": 20,
+   "source": "https://popdex.xyz/",
+   "note": "One unified margin account turns your entire portfolio into collateral—cross-market, cross-asset"
+  },
+  {
+   "q": "What kind of order book does PopDEX use?",
+   "type": "mc",
+   "options": [
+    "AMM liquidity pool",
+    "Fully on-chain CLOB",
+    "Oracle-only pricing",
+    "Off-chain RFQ desk"
+   ],
+   "answer": 1,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/intro",
+   "note": "PopDEX uses a fully on-chain central limit order book"
+  },
+  {
+   "q": "When does the weekly MegaPop Pop Draw happen?",
+   "type": "mc",
+   "options": [
+    "Monday, 3:00 PM UTC",
+    "Sunday, 12:00 AM UTC",
+    "Monday, 3:00 AM UTC",
+    "Friday, 3:00 PM UTC"
+   ],
+   "answer": 2,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "The Pop Draw takes place every Monday at 3:00 AM UTC."
+  },
+  {
+   "q": "The winning Pop Hash is generated from which blockchain?",
+   "type": "mc",
+   "options": [
+    "Morph Tachyon",
+    "Bitcoin",
+    "Ethereum",
+    "Arbitrum"
+   ],
+   "answer": 1,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "the winning 6-digit number, called the Pop Hash, is generated using the Bitcoin blockchain"
+  },
+  {
+   "q": "How is the Pop Hash taken from the chosen Bitcoin block hash?",
+   "type": "mc",
+   "options": [
+    "Last 6 characters, letters too",
+    "Sum of all its digits",
+    "Last 6 numeric digits",
+    "First 6 characters"
+   ],
+   "answer": 2,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "MegaPop extracts the last 6 numeric digits from the selected Bitcoin block hash to generate the Pop Hash"
+  },
+  {
+   "q": "A Pop Ticket digit only counts as a match if both the digit and its position match.",
+   "type": "tf",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "a digit only counts as a match if both the digit and its position are the same"
+  },
+  {
+   "q": "Which prize do you win by matching all 6 digits of the Pop Hash?",
+   "type": "mc",
+   "options": [
+    "Super Prize",
+    "5th Prize",
+    "3rd Prize",
+    "Mega Prize"
+   ],
+   "answer": 3,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "6 | Mega Prize | 42% of the current prize pool"
+  },
+  {
+   "q": "What share of the current MegaPop Pool goes to the Mega Prize?",
+   "type": "mc",
+   "options": [
+    "100%",
+    "42%",
+    "50%",
+    "8%"
+   ],
+   "answer": 1,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "Mega Prize receives 42% of the current MegaPop Pool."
+  },
+  {
+   "q": "What is the fixed reward for matching 4 digits (3rd Prize)?",
+   "type": "mc",
+   "options": [
+    "10 USDT",
+    "5 USDT",
+    "100 USDT",
+    "1,000 USDT"
+   ],
+   "answer": 2,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "4 | 3rd Prize | 100 USDT"
+  },
+  {
+   "q": "What is the max number of Pop Tickets one address can get per weekly draw cycle?",
+   "type": "mc",
+   "options": [
+    "1,000",
+    "No limit",
+    "100,000",
+    "10,000"
+   ],
+   "answer": 3,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "Each address can receive up to 10,000 Pop Tickets per weekly draw cycle."
+  },
+  {
+   "q": "What share of net protocol trading fees is allocated to the MegaPop Pool?",
+   "type": "mc",
+   "options": [
+    "100%",
+    "40%",
+    "60%",
+    "20%"
+   ],
+   "answer": 1,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "40% of net protocol trading fees are allocated to the MegaPop Pool, while 60% supports Referral, Affiliate, and ecosystem campaigns"
+  },
+  {
+   "q": "Wash trading and self-trading earn Pop Tickets.",
+   "type": "tf",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/megapop",
+   "note": "Wash trading, self-trading, and bonus-only or zero-fee activity do not [count towards tickets]"
+  },
+  {
+   "q": "Which PopDEX pair tracks Gold?",
+   "type": "mc",
+   "options": [
+    "BZUSDT",
+    "XAGUSDT",
+    "CLUSDT",
+    "XAUUSDT"
+   ],
+   "answer": 3,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/trading/RWA-futures",
+   "note": "XAUUSDT | Gold | 20x | London (XAGUSDT = Silver, CLUSDT = WTI Crude, BZUSDT = Brent)"
+  },
+  {
+   "q": "What is the max leverage on PopDEX's Gold (XAUUSDT) perp?",
+   "type": "mc",
+   "options": [
+    "5x",
+    "100x",
+    "20x",
+    "50x"
+   ],
+   "answer": 2,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/trading/RWA-futures",
+   "note": "XAUUSDT | Gold | 20x"
+  },
+  {
+   "q": "PopDEX crypto perpetual futures are margined in which asset?",
+   "type": "mc",
+   "options": [
+    "USDC",
+    "BTC",
+    "USDT",
+    "ETH"
+   ],
+   "answer": 2,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/trading/perpetual-futures",
+   "note": "PopDEX offers USDT-margined linear perpetual futures on crypto assets."
+  },
+  {
+   "q": "What decides your PopDEX VIP fee tier?",
+   "type": "mc",
+   "options": [
+    "Token holdings",
+    "Number of referrals",
+    "Account age",
+    "14-day trading volume"
+   ],
+   "answer": 3,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/rewards/vip",
+   "note": "VIP tiers are based on each account's 14-day rolling trading volume on PopDEX."
+  },
+  {
+   "q": "Which firm audited PopDEX's smart contracts?",
+   "type": "mc",
+   "options": [
+    "BlockSec",
+    "CertiK",
+    "Trail of Bits",
+    "OpenZeppelin"
+   ],
+   "answer": 0,
+   "time": 20,
+   "source": "https://popdex.xyz/docs/product-docs/audits",
+   "note": "PopDEX smart contracts are audited by BlockSec"
+  }
+ ]
+}

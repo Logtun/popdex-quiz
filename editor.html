@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PopDEX Quiz — question editor</title>
+<meta name="description" content="Edit PopDEX Quiz question sets: add, edit, delete, import and export questions.">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:title" content="PopDEX Quiz — question editor">
+<meta property="og:description" content="Edit PopDEX Quiz question sets: add, edit, delete, import and export questions.">
+<meta property="og:image" content="https://popdex-quiz.sites.tab.bot/og.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=21">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="logo.png" alt="PopDEX" height="28"><span class="q">Quiz</span></a>
+  <nav aria-label="Main"><a href="index.html">Join</a><a href="solo.html">Solo</a><a href="host.html">Host</a><a href="editor.html" aria-current="page">Editor</a></nav>
+</header>
+<main id="main">
+
+<div id="app">
+  <form class="card wrap-narrow hide" id="login" autocomplete="off">
+    <h2>Host login</h2>
+    <p class="muted">The editor is for the quiz host.</p>
+    <div class="field"><label for="pw">Host password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+    <button class="btn primary big" type="submit">Log in</button>
+    <p class="err" id="loginErr" role="alert"></p>
+  </form>
+  <div id="view"></div>
+</div>
+
+</main>
+<footer>
+  <div>Not an official PopDEX product. No wallet, no prizes, just bragging rights.</div>
+  <div>Built by <a href="https://x.com/iamlogtun" target="_blank" rel="noopener">@iamlogtun</a></div>
+</footer>
+<script src="common.js?v=20"></script><script src="editor.js?v=10"></script>
+</body>
+</html>

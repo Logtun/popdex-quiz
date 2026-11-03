@@ -1,0 +1,7 @@
+_worker.js
+wrangler.toml
+README.md
+LICENSE
+scripts
+.assetsignore
+.gitignore

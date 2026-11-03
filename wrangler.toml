@@ -1,0 +1,20 @@
+name = "popdex-quiz"
+main = "_worker.js"
+compatibility_date = "2026-08-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "."
+binding = "ASSETS"
+run_worker_first = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "popdex-quiz"
+database_id = "<your-d1-database-id>"
+
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "popdex-quiz-files"
+
+# Secret, not stored here:  npx wrangler secret put HOST_PASSWORD_HASH

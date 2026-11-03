@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join a PopDEX Quiz Night game</title>
+<meta name="description" content="Enter the game PIN and your X handle to play the PopDEX Quiz Night.">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:title" content="Join a PopDEX Quiz Night game">
+<meta property="og:description" content="Enter the game PIN and your X handle to play the PopDEX Quiz Night.">
+<meta property="og:image" content="https://popdex-quiz.sites.tab.bot/og.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=21">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="logo.png" alt="PopDEX" height="28"><span class="q">Quiz</span></a>
+  <nav aria-label="Main"><a href="index.html">Join</a><a href="solo.html">Solo</a><a href="host.html">Host</a><a href="editor.html">Editor</a></nav>
+</header>
+<main id="main">
+
+<div class="wrap-narrow" id="app" aria-live="polite">
+  <form class="card join-box" id="joinForm" autocomplete="off">
+    <h2>Join a game</h2>
+    <div class="field"><label for="pin">Game PIN</label><input id="pin" class="pin-input" inputmode="numeric" maxlength="7" placeholder="123456" required></div>
+    <div class="field"><label for="xh">Your X handle</label><div class="xin"><span class="at" aria-hidden="true">@</span><input id="xh" maxlength="40" placeholder="handle" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="text" enterkeyhint="go" required></div></div>
+    <div class="xprev" id="xprev" aria-live="polite"></div>
+    <button class="btn primary big" type="submit" id="joinBtn">Join</button>
+    <p class="err" id="joinErr" role="alert"></p>
+  </form>
+  <div id="view" class="hide"></div>
+</div>
+
+</main>
+<footer>
+  <div>Not an official PopDEX product. No wallet, no prizes, just bragging rights.</div>
+  <div>Built by <a href="https://x.com/iamlogtun" target="_blank" rel="noopener">@iamlogtun</a></div>
+</footer>
+<script src="common.js?v=20"></script><script src="sound.js?v=1"></script><script src="card.js?v=14"></script><script src="play.js?v=24"></script>
+</body>
+</html>
