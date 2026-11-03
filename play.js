@@ -221,7 +221,7 @@ function renderView() {
       <div class="row" style="justify-content:center;margin-top:16px"><a class="btn" href="/solo.html">Play solo</a><a class="btn ghost" href="/play.html">Join another game</a></div>`;
     let blob = null, uploaded = false, resolveUp;
     pqConfetti(view.querySelector(".podium"));
-    pqWireShare($("#tw"), $("#shareNote"), text, location.origin, new Promise((r) => { resolveUp = r; }));
+    pqWireShare($("#tw"), $("#shareNote"), text, "https://popdex-quiz.vercel.app", new Promise((r) => { resolveUp = r; }));
     const paint = () => {
       const c = drawMultiCard(res); c.className = "card-preview"; c.setAttribute("role", "img"); c.setAttribute("aria-label", text);
       const w = $("#cardwrap"); if (!w) return; w.innerHTML = ""; w.appendChild(c);
