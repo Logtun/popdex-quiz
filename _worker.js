@@ -436,7 +436,7 @@ footer{color:#8b8d98;font-size:13px;text-align:center;padding:18px;border-top:1p
 <body>
 <header class="top"><a class="brand" href="/"><img src="/logo.png" alt="PopDEX" height="28"><span class="q">Quiz</span></a></header>
 <main>${inner}</main>
-<footer><div>Not an official PopDEX product. No wallet, no prizes, just bragging rights.</div><div>Built by <a href="https://x.com/iamlogtun" target="_blank" rel="noopener">@iamlogtun</a></div></footer>
+<footer><div>No wallet connection, no prizes, just bragging rights.</div><div>Built by <a href="https://x.com/iamlogtun" target="_blank" rel="noopener">@iamlogtun</a></div></footer>
 </body>
 </html>`;
 }
