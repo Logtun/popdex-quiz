@@ -95,7 +95,7 @@ function updateLobby() {
   $("#start").disabled = !st.player_count;
   if (joined) sfx("join");
 }
-function joinUrl() { return location.origin + "/?pin=" + game.pin; }
+function joinUrl() { return "https://popdex-quiz.vercel.app" + "/?pin=" + game.pin; }
 
 function render() {
   const key = [st.phase, st.qi, st.phase === "question" && serverNow() < st.q_start ? "pre" : "", st.ep || 0].join("|");
@@ -106,7 +106,7 @@ function render() {
   // auto-advance countdown ("Next question in 6…"), redrawn by updateAuto() from the server's auto_at
   const autoBar = `<div class="autobar" id="autoBar" aria-live="polite"><div class="autotxt" id="autoTxt"></div><div class="timerbar"><i id="autoFill"></i></div></div>`;
   if (st.phase === "lobby") {
-    const host = location.host;
+    const host = "popdex-quiz.vercel.app";
     view.innerHTML = `${top}<div class="card host-lobby"><div><p class="muted" style="margin:0 0 4px;font-weight:700">Join at <span class="joinurl">${esc(host)}</span> with Game PIN:</p><div class="pin-ep"><div class="pinbig" aria-label="Game PIN ${st.pin.split("").join(" ")}">${esc(st.pin.slice(0, 3))} ${esc(st.pin.slice(3))}</div>${st.ep > 0 ? `<span class="ep-badge lg">EP ${st.ep}</span><button class="btn ghost ep-edit" id="epEdit" type="button" aria-label="Change episode number">Change EP</button>` : ""}</div><p class="muted" style="margin:14px 0 0">Or scan the QR code. Direct link: <a href="${esc(joinUrl())}" target="_blank" rel="noopener">${esc(joinUrl().replace(/^https?:\/\//, ""))}</a> <button class="btn ghost" id="copy" type="button" style="min-height:34px;padding:6px 10px;font-size:13px">Copy link</button></p></div><div class="qr" id="qr"></div></div>
       <div class="row" style="justify-content:space-between;margin-top:22px"><h2 style="margin:0" id="pcount"></h2><button class="btn primary big" id="start" type="button" disabled>Start game</button></div>
       <p class="muted" style="font-size:14px;margin:6px 0 0" id="phint"></p>
