@@ -2,7 +2,7 @@
 
 A live quiz night for the PopDEX community. A host puts the game on a laptop or stream, players join from their phones with a PIN or QR code, and everyone races through PopDEX questions with a live leaderboard, a podium at the end and a shareable result card for X. There is also a solo practice mode and a no-code editor for making new rounds.
 
-**Live:** https://popdex-quiz.vercel.app/
+**Live:** https://www.popdex-quiz.site/
 
 ## Features
 
@@ -52,7 +52,7 @@ You need a Cloudflare account and Node.js.
 
 Bindings the worker expects: `DB` (D1 database), `FILES` (R2 bucket, optional), `ASSETS` (static files) and the secret `HOST_PASSWORD_HASH`. The same folder also works on Cloudflare Pages (the root `_worker.js` runs in advanced mode) with the same bindings.
 
-If you deploy on your own domain, replace `https://popdex-quiz.vercel.app` in `_worker.js` and the HTML meta tags with your URL.
+If you deploy on your own domain, replace `https://www.popdex-quiz.site` in `_worker.js` and the HTML meta tags with your URL.
 
 ## Credits
 
