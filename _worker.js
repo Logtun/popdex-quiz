@@ -337,7 +337,7 @@ async function cardUpload(req, env, url) {
     if (!p || p.key !== key || p.kicked) return err("Player not found in this game.", 403);
     gamePid = pin + ":" + pid;
     const ex = await env.DB.prepare("SELECT id FROM cards WHERE game_pid = ?").bind(gamePid).first();
-    if (ex) return J({ ok: true, id: ex.id, url: url.origin + "/r/" + ex.id, existing: true });
+    if (ex) return J({ ok: true, id: ex.id, url: PUBQ + "/r/" + ex.id, existing: true });
     const players = (await env.DB.prepare("SELECT id, score, correct, best_streak FROM players WHERE pin = ? AND kicked = 0 ORDER BY score DESC, joined_at ASC").bind(pin).all()).results;
     const rank = players.findIndex((x) => x.id === pid) + 1, me = players[rank - 1];
     const played = g.qi + 1;
@@ -374,7 +374,7 @@ async function cardUpload(req, env, url) {
     if (useR2) await env.FILES.delete(old.map((o) => "cards/" + o.id)).catch(() => {});
     await env.DB.prepare(`DELETE FROM cards WHERE id IN (${old.map(() => "?").join(",")})`).bind(...old.map((o) => o.id)).run();
   }
-  return J({ ok: true, id, url: url.origin + "/r/" + id });
+  return J({ ok: true, id, url: PUBQ + "/r/" + id });
 }
 const hesc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 async function cardRow(env, id) {
@@ -440,15 +440,16 @@ footer{color:#8b8d98;font-size:13px;text-align:center;padding:18px;border-top:1p
 </body>
 </html>`;
 }
+const PUBQ = "https://popdex-quiz.vercel.app"; // public address used in shared links
 async function cardPage(env, id, origin) {
   const r = await cardRow(env, id);
   const html = (s, status, cache) => new Response(s, { status, headers: { "content-type": "text/html; charset=utf-8", "cache-control": cache } });
   if (!r) {
-    const meta = { title: "PopDEX Quiz", descr: "Think you know PopDEX? Play the community-made PopDEX Quiz: live games and solo practice.", url: origin + "/", image: origin + "/og.png?v=2", mime: "image/png", h: 630, alt: "PopDEX Quiz" };
+    const meta = { title: "PopDEX Quiz", descr: "Think you know PopDEX? Play the community-made PopDEX Quiz: live games and solo practice.", url: PUBQ + "/", image: origin + "/og.png?v=2", mime: "image/png", h: 630, alt: "PopDEX Quiz" };
     return html(pageShell(origin, meta, `<h1>This score card has expired or doesn't exist</h1><p class="sub">Score cards are kept for 180 days. You can still play.</p><div class="cta"><a class="btn primary" href="/">Play the PopDEX Quiz</a><a class="btn" href="/solo.html">Play solo</a></div>`), 404, "public, max-age=60");
   }
   const image = `${origin}/r/${r.id}.${r.mime === "image/png" ? "png" : "jpg"}`;
-  const meta = { title: r.title, ogTitle: "PopDEX Quiz Night", descr: r.descr, url: `${origin}/r/${r.id}`, image, mime: r.mime, alt: `${r.title}. ${r.descr}` };
+  const meta = { title: r.title, ogTitle: "PopDEX Quiz Night", descr: r.descr, url: `${PUBQ}/r/${r.id}`, image, mime: r.mime, alt: `${r.title}. ${r.descr}` };
   const who = r.handle && r.name.replace(/^@/, "").toLowerCase() !== r.handle.toLowerCase() ? ` <a href="https://x.com/${hesc(r.handle)}" target="_blank" rel="noopener">@${hesc(r.handle)}</a>` : "";
   const inner = `<img class="card-img" src="${hesc(image)}" width="1200" height="675" alt="${hesc(meta.alt)}">
 <h1>${hesc(r.title)}</h1>
