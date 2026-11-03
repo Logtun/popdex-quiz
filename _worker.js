@@ -440,7 +440,7 @@ footer{color:#8b8d98;font-size:13px;text-align:center;padding:18px;border-top:1p
 </body>
 </html>`;
 }
-const PUBQ = "https://popdex-quiz.vercel.app"; // public address used in shared links
+const PUBQ = "https://www.popdex-quiz.site"; // public address used in shared links
 async function cardPage(env, id, origin) {
   const r = await cardRow(env, id);
   const html = (s, status, cache) => new Response(s, { status, headers: { "content-type": "text/html; charset=utf-8", "cache-control": cache } });
