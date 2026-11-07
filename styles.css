@@ -445,3 +445,17 @@ h1 .ep-badge{vertical-align:middle;margin-left:6px}
 .podium.vD.mini .stage{bottom:-56px;height:110px}
 @media (max-width:600px){.podium.vD:not(.mini){gap:6px}.podium.vD:not(.mini) .ring .av{width:52px;height:52px}.podium.vD:not(.mini) .gold .ring .av{width:66px;height:66px}.podium.vD:not(.mini) .name{font-size:14px}}
 @media (prefers-reduced-motion:reduce){.podium.vD .ped,.podium.vD .float,.podium.vD .float .avwrap,.podium.vD .bits i,.podium.vD .lights b{animation:none}}
+
+/* PC fix: player-side podium fills its card on wider screens */
+@media (min-width:600px){
+.podium.vD.mini{max-width:none;width:auto;margin:10px 0 6px;padding:64px 28px 34px;gap:16px}
+.podium.vD.mini .ring .av{width:58px;height:58px;font-size:22px}
+.podium.vD.mini .gold .ring .av{width:76px;height:76px;font-size:28px}
+.podium.vD.mini .name{font-size:16px}
+.podium.vD.mini .p1 .body{height:150px}
+.podium.vD.mini .p2 .body{height:112px}
+.podium.vD.mini .p3 .body{height:86px}
+.podium.vD.mini .num{font-size:40px}
+.podium.vD.mini .p1 .num{font-size:50px}
+.podium.vD.mini .pts{font-size:14px}
+}
